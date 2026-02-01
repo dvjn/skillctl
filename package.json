@@ -1,12 +1,36 @@
 {
   "name": "skillctl",
-  "module": "index.ts",
+  "version": "1.0.0",
+  "description": "A cross-agent package manager for installing and managing skills",
   "type": "module",
-  "private": true,
+  "bin": {
+    "skillctl": "./src/cli.ts"
+  },
+  "scripts": {
+    "dev": "bun --hot run src/cli.ts",
+    "build": "bun build src/cli.ts --compile --minify --sourcemap --bytecode --outfile dist/skillctl",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@bunli/core": "^0.5.2",
+    "bunli": "^0.5.1",
+    "zod": "^4.3.6"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@bunli/test": "^0.3.0",
+    "@types/bun": "latest",
+    "bun-types": "^1.3.8",
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "typescript": "^5"
-  }
+  },
+  "keywords": [
+    "cli",
+    "skills",
+    "package-manager",
+    "ai-agents"
+  ],
+  "author": "",
+  "license": "MIT"
 }
